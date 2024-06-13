@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<form action="/klass/list" method="post">
+    <label>Name:</label>
+    <input type="text" name="name">
+    <label>Major:</label>
+    <input type="text" name="major">
+    <input type="submit" value="search">
+</form>
+<body>
+    <table border="1">
+        <thead>
+        <tr>
+            <td>id</td>
+            <td>name</td>
+            <td>major</td>
+            <td>Action</td>
+        </tr>
+        </thead>
+    <tr th:each="stu:${stu1}">
+        <td th:text="${stu.getId()}"></td>
+        <td th:text="${stu.getName()}"></td>
+        <td th:text="${stu.getMajor()}"></td>
+        <td><a th:href="@{/klass/delete/{id}(id=${stu.getId})}">Delete</a>
+        <a th:href="@{/klass/update/{id}(id=${stu.getId})}">Update</a></td>
+    </tr>
+    </table>
+<div>
+    <a href="/klass/create">Create</a>
+</div>
+</body>
+</html>

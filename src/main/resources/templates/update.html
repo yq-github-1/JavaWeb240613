@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<form method="post" action="/user/update">
+  <label for="id">Id</label>
+  <select name="id" id="id" style="pointer-events: none">
+    <option value=""></option>
+    <option th:each="user1:${users}" th:value="${user1.getId()}" th:text="${user1.getId()}" th:selected="${user1.getId()==user.getId()}" ></option>
+  </select>
+  <label for="name">Name</label>
+  <input name="name" id="name" th:value="${user.name}">
+  <label for="age">Age</label>
+  <input name="age" id="age" th:value="${user.age}">
+  <input type="submit" value="Submit">
+</form>
+</body>
+</html>

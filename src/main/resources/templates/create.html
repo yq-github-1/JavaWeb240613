@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" action="/user/save">
+    <label for="id">Id</label>
+    <select name="id" id="id">
+        <option value=""></option>
+        <option th:each="user:${users}" th:value="${user.getId()}" th:text="${user.getId()}"></option>
+    </select>
+    <label for="name">Name</label>
+    <input name="name" id="name">
+    <label for="age">Age</label>
+    <input name="age" id="age">
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

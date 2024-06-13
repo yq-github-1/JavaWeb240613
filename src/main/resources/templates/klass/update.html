@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Klass</title>
+</head>
+<body>
+<form action="/klass/save" method="post">
+  <label>ID</label>
+  <input type="text" name="id" readonly th:value="${klass.id}">
+  <label>Name</label>
+  <input type="text" name="name" th:value="${klass.name}">
+  <label>getMajor</label>
+  <input type="text" name="major" th:value="${klass.major}">
+  <input type="submit" value="提交">
+</form>
+
+</body>
+</html>
