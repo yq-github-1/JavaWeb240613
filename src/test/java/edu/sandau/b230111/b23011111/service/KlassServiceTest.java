@@ -26,7 +26,7 @@ class KlassServiceTest {
 
     @Test
     void getReferenceById() {
-        Klass klass = klassService.getReferenceById(1);
+        Klass klass = klassService.getReferenceById(12);
         Assertions.assertNotNull(klass);
     }
 }
